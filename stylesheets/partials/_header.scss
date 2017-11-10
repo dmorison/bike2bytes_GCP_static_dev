@@ -1,0 +1,47 @@
+header {
+	background: url(../images/earth_lights.jpg) no-repeat center center;
+	position: relative;
+	background-attachment: fixed;
+	width: 100%;
+
+	.head-container {
+		width: 100%;
+		text-align: center;
+		padding: 188px 0;
+	}
+
+	h1 {
+		font-family: 'Play', sans-serif;
+		font-size: 3.2em;
+		color: #fff;
+		text-shadow: 0 0 20px #fff;
+	}
+
+	p {
+		color: #fff;
+		text-shadow: 0 0 20px #fff;
+		font-weight: bold;
+
+		a {
+			color: #fff;
+			text-shadow: 0 0 20px #fff;
+			text-decoration: underline;
+		}
+	}
+
+	@media only screen and (min-width: 360px) {
+		h1 {
+			font-size: 3.6em;
+		}
+	}
+
+	@media only screen and (min-width: 768px) {
+		.head-container {
+			padding: 250px 0;
+		}
+
+		h1 {
+			font-size: 5em;
+		}
+	}
+}
