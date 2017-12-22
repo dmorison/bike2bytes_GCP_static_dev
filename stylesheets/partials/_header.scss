@@ -4,6 +4,24 @@ header {
 	background-attachment: fixed;
 	width: 100%;
 
+	&.small-header {
+		background: #1A1A21;
+		width: 100%;
+		
+		.head-container {
+			width: 100%;
+			text-align: center;
+			padding: 10px;
+		}
+
+		h1 {
+			font-family: 'Play', sans-serif;
+			font-size: 3.2em;
+			color: #fff;
+		}
+
+	}
+
 	.head-container {
 		width: 100%;
 		text-align: center;
@@ -25,7 +43,6 @@ header {
 		a {
 			color: #fff;
 			text-shadow: 0 0 20px #fff;
-			text-decoration: underline;
 		}
 	}
 

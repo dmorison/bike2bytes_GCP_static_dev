@@ -26,6 +26,10 @@ article {
 
 		&.shiny-map {
 			max-width: 1120px;
+
+			img {
+				width: 100%;
+			}
 		}
 
 		.card {
