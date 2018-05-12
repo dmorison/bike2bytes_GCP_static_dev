@@ -1,0 +1,13 @@
+iframe {
+    
+    width: 100%;
+    border: none;
+    margin: 0 auto;
+    display: block;
+    border-radius: 10px;
+
+    &.london-crime-mapping {
+        height: 920px;
+    }
+
+}

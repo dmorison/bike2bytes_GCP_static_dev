@@ -9,19 +9,40 @@
   	<meta name="author" content="Dave Morison">
   	<meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <link rel="author" href="https://plus.google.com/+DaveMorison" />
   	<link rel="icon" type="image/png" href="images/favicon.ico">
+
+    <meta property="og:title" content="Bike2:bytes - David Morison" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://www.bike2bytes.com/" />
+    <meta property="og:description" content="Website of David Morison, London, UK" />
+    <meta property="og:image" content="./images/og-image.jpg" />
 
   	<link rel="stylesheet" href="./css/normalize.css">
 	<link rel="stylesheet" href="./css/style.css">
 
     <link href='http://fonts.googleapis.com/css?family=Play:400,700' rel='stylesheet' type='text/css' />
+    <link href='http://fonts.googleapis.com/css?family=Black+Ops+One' rel='stylesheet' type='text/css' />
 
 	<!--[if lt IE 9]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
+
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-47887378-1']);
+      _gaq.push(['_setDomainName', 'bike2bytes.com']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
 </head>
 
-<body>
+<body ng-app="bikeBytesApp">
 	<!--[if lt IE 8]>
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -29,20 +50,97 @@
     <header>
         <div class="head-container">
             <a href="./index.html"><h1>Bike 2:bytes</h1></a>
-            <p>Wed developer</p>
+            <p>Dave Morison: Wed developer, London, UK</p>
         </div>
     </header>
 
-    <article>
+    <article ng-controller="bikeBytes">
         <div class="content-container clearfix">
-        	<div class="card size-100">
-        		<div class="card-inner alpha omega">
+        	<div class="card">
+                <div class="card-inner alpha">
+                    <a href="https://medium.com/towards-data-science/exploratory-data-analysis-into-the-relationship-between-different-types-of-crime-in-london-20c328e193ff" target="_blank">
+                        <div class="card-contents">
+                            <h3>Latest Medium blog post:</h3>
+                            <p>Exploratory data analysis into the relationship between different types of crime in London</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-inner omega">
+                    <a href="./shinyapp-london-crime-mapping.html">
+                        <div class="card-contents">
+                            <h3>London crime mapping</h3>
+                            <img src="./images/bar-chart.png">
+                            <p>Exploring data with interactive visualizations with R and Shiny apps</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <!-- <div class="card center-align size-100">
+                <div class="card-inner alpha omega">
                     <div class="card-contents">
-                        <h3>Testing</h3>
-                        <p>Just trying out some hosting on Google Cloud Platform...</p>
+                        <h3>What I've been reading</h3>
+                        <div class="challenge">
+                            <span>Readings count of 2017:</span><span class="number">{{ readingsCount }}</span>
+                        </div>
+                        <ul class="card-list">
+                            <li ng-repeat="item in readings"><a href="{{ item.link }}" target="_blank">{{ item.title }}</a></li>
+                        </ul>
                     </div>
                 </div>
-        	</div>
+            </div> -->
+            <div class="card size-60">
+                <div class="card-inner alpha">
+                    <a href="./tour-de-france-game-2017.html">
+                        <div class="card-contents">
+                            <h3>Tour de France Game 2017</h3>
+                            <p>3 days before the start of the 2017 Tour I decided to quickly develop a game that a handful of friends and family could play.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <!-- <div class="card size-40">
+                <div class="card-inner omega">
+                    <a href="/wineBook" target="_blank">
+                        <div class="card-contents">
+                            <h3>Wine cellar</h3>
+                            <img src="images/drink.png">
+                            <p>Visit my personal wine website</p>
+                        </div>
+                    </a>
+                </div>
+            </div> -->
+            <div class="card size-40">
+                <div class="card-inner omega">
+                    <div class="card-contents">
+                        <h3>Current book I'm reading:</h3>
+                        <p>{{ book }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card size-40">
+                <div class="card-inner alpha">
+                    <div class="card-contents">
+                        <h3>2017 challenge:</h3>
+                        <p>20 push-ups per day, 6 days a week</p>
+                        <div class="challenge">
+                            <span>Count:</span><span class="number">{{ pushups }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card size-60">
+                <div class="card-inner omega">
+                    <a href="http://www.parkrun.org.uk/richmond/results/athletehistory/?athleteNumber=995354" target="_blank">
+                        <div class="card-contents">
+                            <h3>Fastest 5km park run:</h3>
+                            <span class="number">{{ parkrunpb }}</span>
+                            <p>Richmond Park<br><span class="small-text">(visit results page)</span></p>
+                        </div>
+                    </a>
+                </div>
+            </div>
         </div>
 
         <footer class="clearfix">
@@ -56,6 +154,7 @@
         </footer>
     </article>
 
+    <script src="./libs/angular.min.js"></script>
 	<script src="./dist/app.js"></script>
 </body>
 </html>
